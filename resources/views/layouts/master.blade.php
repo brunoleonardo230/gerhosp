@@ -51,6 +51,9 @@
     <script src="{{ URL::asset('js/jquery.js') }}"></script>
     <script src="{{ URL::asset('js/jquery.maskedinput.min.js') }}"></script>
 
+    <!-- Busca de CEP -->
+    <script src="{{ URL::asset('js/cep.js') }}"></script>
+
     <!-- AngularJS -->
     <script src="{{ URL::asset('js/angular/angular.min.js') }}"></script>
     <script src="{{ URL::asset('js/angular/angular-animate.min.js') }}"></script>

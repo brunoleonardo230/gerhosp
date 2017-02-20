@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePatientsTable extends Migration
+class CreateUnitsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,9 @@ class CreatePatientsTable extends Migration
      */
     public function up()
     {
-        Schema::create('patients', function (Blueprint $table) {
+        Schema::create('units', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nome',120);
-            $table->date('datanasc')->nullable();
-            $table->string('id_sexo',1);
-            $table->integer('id_estadocivil');
-            $table->string('naturalidade',60)->nullable();
-            $table->string('ocupacao',60)->nullable();
-            $table->string('nomepai',120)->nullable();
-            $table->string('nomemae',120);
-            $table->string('cpf',14);
-            $table->string('rg',25);
-            $table->string('cartaosus',25)->nullable();
+            $table->string('nome',60);
             $table->string('cep',9)->nullable();
             $table->string('logradouro',200)->nullable();
             $table->string('complemento',200)->nullable();
@@ -35,7 +25,6 @@ class CreatePatientsTable extends Migration
             $table->string('ibge',8)->nullable();
             $table->string('numero',9)->nullable();
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -46,6 +35,6 @@ class CreatePatientsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('patients');
+        Schema::dropIfExists('units');
     }
 }
