@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use App\Sexo;
 
 class CreateSexosTable extends Migration
 {
@@ -18,6 +19,8 @@ class CreateSexosTable extends Migration
             $table->string('nome',10);
             $table->timestamps();
         });
+
+        
     }
 
     /**

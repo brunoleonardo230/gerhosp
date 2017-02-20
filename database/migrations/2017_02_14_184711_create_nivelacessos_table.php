@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use App\Nivelacesso;
 
 class CreateNivelacessosTable extends Migration
 {
@@ -18,6 +19,7 @@ class CreateNivelacessosTable extends Migration
             $table->string('nome',30);
             $table->timestamps();
         });
+
     }
 
     /**

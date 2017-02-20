@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use App\Estadocivil;
 
 class CreateEstadocivilsTable extends Migration
 {
@@ -18,6 +19,8 @@ class CreateEstadocivilsTable extends Migration
             $table->string('nome',15);
             $table->timestamps();
         });
+
+        
     }
 
     /**
