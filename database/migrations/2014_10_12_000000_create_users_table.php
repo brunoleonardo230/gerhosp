@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('username',25)->unique();
+            $table->integer('nivelacesso');
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
@@ -29,7 +30,8 @@ class CreateUsersTable extends Migration
             'name' => 'Adminstrador',
             'username' => 'admin',
             'email' => 'admin@admin.com',
-            'password' => md5('admin'),
+            'password' => sha1('admin'),
+            'nivelacesso' => 1,
             ]);
     }
 
