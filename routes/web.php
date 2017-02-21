@@ -15,3 +15,4 @@ Route::post('/unit/register', 'UnitController@save');
 Route::get('/unit/delete/{id}', 'UnitController@delete');
 Route::get('/unit/edit/{id}', 'UnitController@edit');
 Route::post('/unit/edit', 'UnitController@update');
+Route::post('/unit/search', 'UnitController@search');

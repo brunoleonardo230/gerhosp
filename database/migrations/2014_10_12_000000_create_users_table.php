@@ -30,7 +30,7 @@ class CreateUsersTable extends Migration
             'name' => 'Adminstrador',
             'username' => 'admin',
             'email' => 'admin@admin.com',
-            'password' => sha1('admin'),
+            'password' => md5('admin'),
             'nivelacesso' => 1,
             ]);
     }

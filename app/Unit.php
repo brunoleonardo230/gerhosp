@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Unit extends Model
 {
+    protected $primaryKey = 'idunidade';
+    
     protected $fillable = [
      'idunidade',
      'nome',

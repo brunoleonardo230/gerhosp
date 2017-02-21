@@ -71,7 +71,7 @@
 			<br />
 			<div class="form-group">
 				<div class="col-lg-6 col-md-offset-6">
-					<input type="submit" class="btn btn-success" value="Cadastrar" />
+					<input type="submit" class="btn btn-success" value="@if(isset($query)) Alterar @else Cadastrar @endif" />
 					<input type="reset" class="btn btn-danger" value="Limpar" />
 				</div>
 			</div>

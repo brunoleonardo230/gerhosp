@@ -20,6 +20,17 @@ class UnitController extends Controller {
 
    }
 
+   public function search(Request $request) {
+
+      $title = 'Unidades';
+
+      $unidade = Unit::where('nome', 'like', '%'.$request['search'].'%')
+         ->get();
+
+      return view('unidade.index', compact('title', 'unidade'));
+
+   }
+
    public function create() {
 
       $title = 'Cadastro Unidade';
@@ -87,17 +98,17 @@ class UnitController extends Controller {
 
    }
 
-   public function edit($id) {
+   public function edit($idunidade) {
 
       $title = 'Editar Unidade';
 
-      $estados = States::orderBy('nomeestado','asc')->get();
+      //$estados = States::orderBy('nomeestado','asc')->get();
 
-      $query = Unit::find($id);
+      $query = Unit::find($idunidade);
 
       $url = '/unit/edit';
 
-      return view('unidade.form', compact('title', 'estados', 'query', 'url'));
+      return view('unidade.form', compact('title', 'query', 'url'));
 
    }
 
@@ -107,12 +118,16 @@ class UnitController extends Controller {
       $rules = [];
 
       $rules = [
-         'nome'             => 'required',
-         'rua'              => 'required',
-         'bairro'           => 'required',
-         'numero'           => 'required',
-         'cep'              => 'required',
-         'cidade'           => 'required'
+         'nome'         => 'required',
+         'cep'          => '',
+         'logradouro'   => '',
+         'complemento'  => '',
+         'bairro'       => '',
+         'localidade'   => '',
+         'uf'           => '',
+         'ibge'         => '',
+         'numero'       => '',
+         
       ];
 
       $unidade = $request['nome'];
