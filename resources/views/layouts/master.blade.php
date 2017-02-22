@@ -76,7 +76,7 @@
        $("#cpf").mask("999.999.999-99");
        $("#cnpj").mask("99.999.999/9999-99");
        $("#cep").mask("99999-999");
-       $("#dtaemissao, #dtavencimento").mask("99/99/9999");
+       $("#datanasc").mask("99/99/9999");
        $("#inscricaomunicipal").mask("999999999");
    });
 </script>

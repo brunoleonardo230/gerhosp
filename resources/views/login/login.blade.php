@@ -15,7 +15,7 @@
             <fieldset>
                <div class="form-group">
                   <label for="username">
-                     Login:{{md5('admin')}}
+                     Login:
                   </label>
                   <input type="text" class="form-control" id="username" name="username" required />
                </div>

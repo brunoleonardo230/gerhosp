@@ -5,7 +5,7 @@
             <a href="{{ url('/home') }}"><i class="fa fa-fw fa-dashboard"></i> Início</a>
         </li>
         <li>
-            <a href="{{ url('/supplier') }}"><i class="fa fa-fw fa-address-card-o"></i> Pacientes</a>
+            <a href="{{ url('/patient') }}"><i class="fa fa-fw fa-address-card-o"></i> Pacientes</a>
         </li>
        
         <li>
