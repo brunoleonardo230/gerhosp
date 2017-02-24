@@ -20,6 +20,10 @@
 				<input type="text" class="form-control" name="password" id="password" placeholder="Digite a nova senha">
 				@if(isset($query))<input type="hidden" id="id" name="id" value="{{$query['id']}}"> @endif
 			</div>
+			<div class="form-group">
+				<label for="password2">Confirme a Senha:</label>
+				<input type="text" class="form-control" name="password2" id="password2" placeholder="Confirme a nova senha">
+			</div>
 				<br />
 				<div class="form-group">
 					<input type="submit" class="btn btn-success" value="Salvar" />

@@ -27,7 +27,8 @@ class PassController extends Controller {
       $rules = [];
 
       $rules = [
-         'password'             => 'required'
+         'password'             => 'required',
+         'password2'            => 'same:password'
       ];
 
       $validator = Validator::make($request->all(), $rules);
