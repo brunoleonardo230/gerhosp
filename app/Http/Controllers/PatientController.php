@@ -6,6 +6,7 @@ use App\Patient;
 use App\Sexo;
 use App\Estadocivil;
 use App\Http\Controllers\Controller;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Http\Request;
 use Validator;
 
@@ -15,7 +16,7 @@ class PatientController extends Controller {
 
       $title = 'Pacientes';
 
-      $paciente = Patient::all();
+      $paciente = Patient::paginate(15);
 
       return view('paciente.index', compact('title', 'paciente'));
 
@@ -26,7 +27,10 @@ class PatientController extends Controller {
       $title = 'Pacientes';
 
       $paciente = Patient::where('nome', 'like', '%'.$request['search'].'%')
-         ->get();
+         ->orWhere('cpf', 'like', '%'.$request['search'].'%')
+         ->orWhere('rg', 'like', '%'.$request['search'].'%')
+         ->orWhere('cartaosus', 'like', '%'.$request['search'].'%')
+         ->paginate(15);
 
       return view('paciente.index', compact('title', 'paciente'));
 
@@ -59,7 +63,7 @@ class PatientController extends Controller {
          'ocupacao'     => '',
          'nomemae'      => '',
          'nomepai'      => '',
-         'cpf'          => '',
+         'cpf'          => 'unique:posts',
          'rg'           => '',
          'cartaosus'    => '',
          'cep'          => '',
@@ -75,8 +79,17 @@ class PatientController extends Controller {
 
       $paciente = $request['nome'];
 
-      $datanasc = explode('/', $request['datanasc']);
-      $request['datanasc'] = $datanasc[2].'-'.$datanasc[1].'-'.$datanasc[0];
+      $retirado = array("-",".",",","/");
+
+      $request['cpf'] = str_replace($retirado, "", $request['cpf']);
+      $request['rg'] = str_replace($retirado, "", $request['rg']);
+      $request['cartaosus'] = str_replace($retirado, "", $request['cartaosus']);
+
+      if ($request['datanasc'] != '') {
+         $datanasc = explode('/', $request['datanasc']);
+         $request['datanasc'] = $datanasc[2].'-'.$datanasc[1].'-'.$datanasc[0];
+      }
+      
 
       $validator = Validator::make($request->all(), $rules);
 

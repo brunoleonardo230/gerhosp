@@ -7,7 +7,6 @@
       </h1>
    </div>
 </div>
-
 @include('layouts.msg')
 @include('layouts.erro')
 
@@ -15,6 +14,14 @@
 	<div class="col-lg-9">
 		<form action="{{ url($url) }}" method="post">
 		{{ csrf_field() }}
+
+			@if(isset($query))
+				<div class="form-group">
+					<div class="col-lg-12">
+						<h3>Código do paciente: {{$query['id']}}</h3>
+					</div>
+				</div>
+			@endif
 			
 			<div class="form-group">
 				<div class="col-lg-12">

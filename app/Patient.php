@@ -13,7 +13,7 @@ class Patient extends Model
         'id_sexo',
         'id_estadocivil',
         'naturalidade',
-        'ocupação',
+        'ocupacao',
         'nomepai',
         'nomemae',
         'cpf',

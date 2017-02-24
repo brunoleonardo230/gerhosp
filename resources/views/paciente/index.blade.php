@@ -32,6 +32,9 @@
          <thead>
             <tr>
                <th>
+                  Código
+               </th>
+               <th>
                   Nome
                </th>
                <th>
@@ -42,13 +45,13 @@
                </th>
                <th></th>
                <th></th>
-               <th></th>
             </tr>
          </thead>
 
          <tbody>
             @foreach($paciente as $key => $value)
                <tr>
+                  <td>{{ $value->id }}</td>
                   <td>{{ $value->nome }}</td>
                   <td>{{ $value->cpf }}</td>
                   <td>{{ $value->cartaosus }}</td>
@@ -62,6 +65,7 @@
             @endforeach
          </tbody>
       </table>
+      {{ $paciente->links() }}
    </div>
 </div>
 @endsection
