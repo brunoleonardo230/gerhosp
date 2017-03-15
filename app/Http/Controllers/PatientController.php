@@ -63,7 +63,7 @@ class PatientController extends Controller {
          'ocupacao'     => '',
          'nomemae'      => '',
          'nomepai'      => '',
-         'cpf'          => 'unique:posts',
+         'cpf'          => 'unique:patients',
          'rg'           => '',
          'cartaosus'    => '',
          'cep'          => '',
@@ -159,7 +159,7 @@ class PatientController extends Controller {
          'ocupacao'     => '',
          'nomemae'      => '',
          'nomepai'      => '',
-         'cpf'          => '',
+         'cpf'          => 'unique:patients',
          'rg'           => '',
          'cartaosus'    => '',
          'cep'          => '',
@@ -174,6 +174,12 @@ class PatientController extends Controller {
       ];
 
       $paciente = $request['nome'];
+
+      $retirado = array("-",".",",","/");
+
+      $request['cpf'] = str_replace($retirado, "", $request['cpf']);
+      $request['rg'] = str_replace($retirado, "", $request['rg']);
+      $request['cartaosus'] = str_replace($retirado, "", $request['cartaosus']);
 
       $datanasc = explode('/', $request['datanasc']);
       $request['datanasc'] = $datanasc[2].'-'.$datanasc[1].'-'.$datanasc[0];
