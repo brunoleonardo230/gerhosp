@@ -45,6 +45,7 @@
                </th>
                <th></th>
                <th></th>
+               <th></th>
             </tr>
          </thead>
 
@@ -55,6 +56,9 @@
                   <td>{{ $value->nome }}</td>
                   <td>{{ $value->cpf }}</td>
                   <td>{{ $value->cartaosus }}</td>
+                  <td>
+                     <a href="{{ url('/patient/ver/'.$value->id) }}"><span class="text-primary glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                  </td>
                   <td>
                      <a href="{{ url('/patient/edit/'.$value->id) }}"><span class="text-warning glyphicon glyphicon-edit" aria-hidden="true"></span></a>
                   </td>
